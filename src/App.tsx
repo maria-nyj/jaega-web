@@ -30,7 +30,7 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    fetch('/data/content.json')
+    fetch(`${import.meta.env.BASE_URL}data/content.json`)
       .then(res => res.json())
       .then(json => setData(json))
       .catch(err => console.error('Failed to load content:', err));

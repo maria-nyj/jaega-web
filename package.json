@@ -1,9 +1,9 @@
 {
-  "name": "react-example",
+  "name": "jaega-web",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
-  "homepage": "https://github.com/maria-nyj/jaega-web",
+  "homepage": "https://maria-nyj.github.io/jaega-web",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
