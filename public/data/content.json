@@ -1,0 +1,68 @@
+{
+  "brand": "마리아 재가 센터",
+  "navMenu": [
+    {
+      "label": "홈",
+      "href": "#home"
+    },
+    {
+      "label": "기관소개",
+      "href": "#about"
+    },
+    {
+      "label": "주요사업",
+      "href": "#services"
+    }
+  ],
+  "hero": {
+    "title": "당신의 곁에 언제나,\n마리아 재가 센터가 함께합니다",
+    "subtitle": "우리는 더 나은 세상을 만들기 위해 사회적 약자를 돕고 지원합니다.",
+    "buttonText": "자세히 보기",
+    "bgImage": "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
+  },
+  "about": {
+    "title": "기관 소개",
+    "subtitle": "희망을 전하는 따뜻한 손길",
+    "description": "마리아 재가 센터는 소외된 이웃들에게 실질적인 도움과 희망을 전하기 위해 설립되었습니다. 우리는 투명한 운영과 진심 어린 봉사를 통해 지역사회의 든든한 버팀목이 되고자 합니다.",
+    "stats": [
+      {
+        "label": "0000",
+        "value": "0000"
+      },
+      {
+        "label": "0000",
+        "value": "0000"
+      },
+      {
+        "label": "0000",
+        "value": "0000"
+      }
+    ]
+  },
+  "services": {
+    "title": "주요 사업",
+    "items": [
+      {
+        "title": "방문 요양",
+        "desc": "",
+        "icon": "Heart"
+      },
+      {
+        "title": "목욕 ",
+        "desc": "",
+        "icon": "UserCheck"
+      },
+      {
+        "title": "장기 요양 등급",
+        "desc": "",
+        "icon": "ShieldAlert"
+      }
+    ]
+  },
+  "contact": {
+    "address": "경기도 남양주시 진접읍 내각1로73번안길 17 1층1호 (진접읍)",
+    "phone": "031-510-8999",
+    "email": "ssa610914@gmail.com",
+    "businessNumber": "24136001272"
+  }
+}
