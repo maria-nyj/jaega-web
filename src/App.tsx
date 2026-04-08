@@ -16,6 +16,8 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from './firebase';
 
 // Icon mapping helper
 const IconMap: Record<string, React.ElementType> = {
@@ -30,10 +32,27 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/content.json`)
-      .then(res => res.json())
-      .then(json => setData(json))
-      .catch(err => console.error('Failed to load content:', err));
+    const fetchData = async () => {
+      try {
+        const docRef = doc(db, 'settings', 'main_config');
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const firestoreData = docSnap.data();
+          setData(firestoreData);
+          console.log('[Loaded] Fetched Data directly from Firestore');
+        } else {
+          console.log('[Warning] No such document in Firestore! Using local JSON data as fallback.');
+          const res = await fetch(`${import.meta.env.BASE_URL}data/content.json`);
+          const baseData = await res.json();
+          setData(baseData);
+        }
+      } catch (err) {
+        console.error('Failed to load content from Firestore:', err);
+      }
+    };
+
+    fetchData();
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -150,7 +169,7 @@ export default function App() {
             >
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1559234938-b60fff04894d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={data.about.descImage}
                   alt="About Us"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
